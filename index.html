@@ -19,7 +19,9 @@
 </div>
 <script>
     $(() => {
-        addMessages({name: 'Tim', message: 'hello'})
+        $("#send").click(()=>{
+            addMessages({name: 'Tim', message: 'hello'})
+        })
     })
 
     function addMessages(message){
