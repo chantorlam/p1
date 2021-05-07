@@ -13,12 +13,16 @@
         <br>
         <button id="send" class="btn btn-success">Send</button>
     </div>
-    <div id="message">
+    <div id="messages">
 
     </div>
 </div>
 <script>
     $(() => {
-        console.log('loaded')
+        addMessages({name: 'Tim', message: 'hello'})
     })
+
+    function addMessages(message){
+        $("#messages").append(`<h4> ${message.name} </h4> <p> ${message.message} </p>`)
+    }
 </script>
