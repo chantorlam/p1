@@ -2,11 +2,16 @@ var express = require('express')
 var app = express()
 
 app.use(express.static(__dirname))
-var server = app.listen(3000, () => {
-    console.log('server is listening on port', server.address().port)
+
+var messages = [
+    {name: 'Tim', message: 'Hi'},
+    {name: 'Jane', message: 'Hello'}
+]
+
+app.get('/messages', (req, res) =>{
+    res.send(messages)
 })
 
-// endpoint /messages
-app.get('/messages', (req, res) =>{
-    res.send("hello")
+var server = app.listen(3000, () => {
+    console.log('server is listening on port', server.address().port)
 })
